@@ -1,7 +1,7 @@
 function triggerDownloads() {
     $.post(
         "/addtodownloads.php"
-    ).done(data => {
+    ).done((data) => {
             const downloads = document.getElementById("downloads-container");
             data = JSON.parse(data);
 
@@ -14,7 +14,7 @@ function triggerDownloads() {
                 const day = twoDigits(date.getDate());
                 const hour = twoDigits(date.getHours());
                 const minute = twoDigits(date.getMinutes());
-                const timezone = date.toLocaleTimeString('en-us', {timeZoneName:'short'}).split(' ')[2];
+                const timezone = date.toLocaleTimeString("en-us", {timeZoneName:"short"}).split(" ")[2];
                 const dateString = `${year}_${month}_${day} @ ${hour}:${minute} ${timezone}`;
 
                 downloads.innerHTML += `
@@ -24,7 +24,7 @@ function triggerDownloads() {
                                 <t class="download-file-date">${dateString}</t>
                             </div>
                             <div align="right" class="downloads-div download-button"">
-                                <a onclick="download('${key}')" class="button">Download</a>
+                                <a href="download.php?file_name=${encodeURIComponent(key)}" class="button" download>Download</a>
                             </div>
                         </div>
                         `;
@@ -33,17 +33,8 @@ function triggerDownloads() {
         });
 }
 
-function download(fileName) {
-    $.post(
-        "/download.php",
-        {
-            file_name: fileName
-        }
-    );
-}
-
 function twoDigits(value) {
-    if(value < 10) {
+    if (value < 10) {
         return '0' + value;
     }
     return value;

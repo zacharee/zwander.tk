@@ -6,18 +6,33 @@
  * Time: 7:51 PM
  */
 
-$path = "/home/zach/android/lineage/out/target/product/h918/".$_POST["file_name"];
+$basepath = realpath("/home/zach/android/lineage/out/target/product/h918/");
 
-header("Cache-Control: private");
-header("Content-Description: File Transfer");
-header("Content-Type: application/octet-stream");
-header("Content-Length: " .(string)(filesize($path)) );
-header('Content-Disposition: attachment; filename="'.basename($path).'"');
-header("Content-Transfer-Encoding: Binary");
+if (isset($_GET["file_name"])) {
+    $file = urldecode($_GET['file_name']);
+    $path = $basepath."/".$file;
 
-ob_clean();
-flush();
+    if (file_exists($path)) {
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
 
-readfile($path);
+        header("Content-Description: File Transfer");
+        header("Content-Type: ".finfo_file($finfo, $path));
+        header("Content-Length: ".filesize($path));
+        header('Content-Disposition: attachment; filename="'.$file.'"');
+        header("Content-Type: binary/octet-stream");
 
-exit();
+        finfo_close($finfo);
+
+        ob_clean();
+        flush();
+
+        echo "Downloading $file";
+
+        readfile($path);
+    } else {
+        echo "$file not found";
+    }
+} else {
+    echo "Property file_name not set";
+}
+
