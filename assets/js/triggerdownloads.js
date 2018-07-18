@@ -1,8 +1,7 @@
 function triggerDownloads() {
     $.post(
         "/addtodownloads.php"
-    ).done(
-        function(data) {
+    ).done(data => {
             const downloads = document.getElementById("downloads-container");
             data = JSON.parse(data);
 
@@ -28,11 +27,10 @@ function triggerDownloads() {
                                 <a onclick="download('${key}')" class="button">Download</a>
                             </div>
                         </div>
-                        `
+                        `;
 
-            })
-        }
-    );
+            });
+        });
 }
 
 function download(fileName) {
@@ -41,7 +39,7 @@ function download(fileName) {
         {
             file_name: fileName
         }
-    )
+    );
 }
 
 function twoDigits(value) {
