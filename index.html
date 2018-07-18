@@ -6,11 +6,12 @@
 -->
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<title>Zachary Wander</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
@@ -31,7 +32,7 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
+								<li><a href="#work" onclick="addAllProjects()">Work</a></li>
                                 <li><a href="#downloads" onclick="triggerDownloads()">Downloads</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
@@ -53,6 +54,7 @@
 								<h2 class="major">Work</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
 								<p>This is just a list of the projects I've developed.</p>
+                                <ul id="projects-container" class="actions stacked"></ul>
 							</article>
 
 						<!-- Contact -->
@@ -310,7 +312,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Zachary Wander. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
@@ -320,6 +322,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts -->
         <script src="assets/js/triggerdownloads.js"></script>
+        <script src="assets/js/addprojects.js"></script>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/browser.min.js"></script>
         <script src="assets/js/breakpoints.min.js"></script>
