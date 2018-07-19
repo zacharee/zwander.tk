@@ -4,10 +4,9 @@ function addAllProjects() {
     const boredsigns = new Project("BoredSigns",
         "BoredSigns adds more functionality to the second screen of LG devices with secondary displays (LG V10, LG V20, etc).",
         "https://lh3.googleusercontent.com/GWj8LjhLCuyRG5_izOBDLlCtHREX1lTwXMPQp93bB4B6TrUy7vD9MhJhzjFHdcpWjtyH");
-
+    boredsigns.addSite("https://github.com/zacharee/BoredSigns", Project.ghIcon());
     boredsigns.addSite(Project.psBase() + "com.zacharee1.boredsigns", Project.playIcon());
     boredsigns.addSite("https://forum.xda-developers.com/v20/themes/discussion-boredsigns-custom-signboard-t3735600", Project.xdaIcon());
-    boredsigns.addSite("https://github.com/zacharee/BoredSigns", Project.ghIcon());
 
     const sswidgets = new Project("Custom SignBoard Widgets",
         "The predecessor of BoredSigns. Now discontinued.",
