@@ -29,7 +29,7 @@ foreach ($files as $value) {
         unset($files[array_search($value, $files)]);
     } else {
         $time = filemtime($dir."/".$value);
-        $return_array[$value] = $time;
+        $return_array[$value] = $time."/".filesize($dir."/".$value);
     }
 }
 

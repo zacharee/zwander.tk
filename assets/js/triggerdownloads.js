@@ -8,7 +8,10 @@ function triggerDownloads() {
             downloads.innerHTML = null;
 
             Object.entries(data).forEach(([key, value]) => {
-                const date = new Date(value * 1000);
+                value = value.split("/");
+                const time = value[0];
+                const sizeMiB = (value[1] / 1048576).toFixed(2);
+                const date = new Date(time * 1000);
                 const year = date.getFullYear();
                 const month = twoDigits(date.getMonth() + 1);
                 const day = twoDigits(date.getDate());
@@ -22,6 +25,7 @@ function triggerDownloads() {
                             <div align="left" class="downloads-div">
                                 <t class="download-title">${key}</t>
                                 <t class="download-file-date">${dateString}</t>
+                                <t class="download-file-size">${sizeMiB} MiB</t>
                             </div>
                             <div align="right" class="downloads-div download-button"">
                                 <a href="download.php?file_name=${encodeURIComponent(key)}" class="button" download>Download</a>
