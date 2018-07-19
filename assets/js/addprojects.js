@@ -14,9 +14,10 @@ function addAllProjects() {
         "https://lh3.googleusercontent.com/WGvpFJGi5KNfIqhEnl-uB3_ZgzZ8Z9JiGYwdLr25yX1CZIwtUOi_l12T6TrCbt5R3tg");
     sswidgets.addSite("https://forum.xda-developers.com/v20/themes/app-custom-screen-widgets-stock-soon-t3656497", Project.xdaIcon());
 
-    Project.newInstance("DPI Changer",
+    const dpi = new Project("DPI Changer",
         "This app allowed users to change their device resolution, DPI and overscan, without using root. It has been discontinued for now.",
         "https://lh3.googleusercontent.com/NlpH-uGzsE89KhzlG8ONZGsrQJUoPKNICKogjplz-VbtrVOLjoYfga3g2UsNLCvvWUhj");
+    dpi.addSite("https://forum.xda-developers.com/android/apps-games/app-dpi-changer-t3601633", Project.xdaIcon());
 
     const ohm = new Project("One-Handed Mode",
         "Uses the same framework as DPI Changer to bring One-Handed Mode to most Android devices",
@@ -43,6 +44,13 @@ function addAllProjects() {
         "https://lh3.googleusercontent.com/99Jlb9F0WLOpM0QSeeV5oyiUv1EwAKBoznOPQ5kibUaudn_kzH6BpsFj8yD1TVM4iZE");
     nobar.addSite(Project.psBase() + "com.xda.nobar", Project.playIcon());
     nobar.addSite("https://forum.xda-developers.com/android/apps-games/official-xda-navigation-gestures-iphone-t3792361", Project.xdaIcon());
+
+    const rctd = new Project("RCTD Remover",
+        "Simple tool to remove RCTD, CCMD and Triton—all forms of bloatware on LGUX—on rooted LG devices.",
+        "https://labs-public-dl.xda-cdn.com/images/3985403e-a330-40cc-b0d3-6d31f6868864.png");
+    rctd.addSite("https://github.com/zacharee/RCTDRemoverforLG", Project.ghIcon());
+    rctd.addSite("https://forum.xda-developers.com/v20/how-to/rctd-remover-script-feedback-t3675968", Project.xdaIcon());
+    rctd.addSite("https://labs.xda-developers.com/store/app/com.zacharee1.rctdremoverforlg", Project.xdaIcon());
 
     const saturation = new Project("Sa2ration",
         "Simple app to change the color profile on Pixel devices running 8.1 and later.",
