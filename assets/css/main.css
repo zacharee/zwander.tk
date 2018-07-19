@@ -1663,17 +1663,46 @@ input, select, textarea {
         display: flex;
         flex-direction: column;
         justify-content: inherit;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .downloads-div span {
+        white-space: -moz-pre-wrap; /* Mozilla */
+        white-space: -hp-pre-wrap; /* HP printers */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: pre-wrap; /* CSS 2.1 */
+        white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+        word-wrap: break-word; /* IE */
+        word-break: break-all;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        line-height: 1;
+    }
+
+    .downloads-div div {
+        display: flex;
+        flex-direction: column;
+        /*margin-top: 1em;*/
+        margin-bottom: 1em;
+    }
+
+    .downloads-div div span {
+        margin-top: 0 !important;
+        margin-bottom: 0;
     }
 
 	.download-box {
 		width: inherit;
 		display: flex;
+        flex-direction: initial;
 		justify-content: space-between;
-		min-height: 5em;
+        height: auto;
         margin-top: 1em;
         margin-bottom: 1em;
         padding: 0.25em 0.5em 0.25em 0.5em;
-        border: dotted 1px #ffffff;
+        text-transform: none !important;
 	}
 
     .project-box {
@@ -1701,7 +1730,7 @@ input, select, textarea {
 
 	.download-button {
 		width: 12em;
-		height: 3em;
+		/*height: 3em;*/
         margin: auto 0 auto auto;
     }
 
@@ -1747,9 +1776,9 @@ input, select, textarea {
 
     .profile-icon {
         border-radius: 100%;
-        margin: auto;
-        width: 5em;
-        height: 5em;
+        margin: auto auto auto -1px;
+        width: inherit;
+        height: inherit;
         left: 0;
         right: 0;
         top: 0;
@@ -1763,16 +1792,9 @@ input, select, textarea {
         max-width: 930px !important;
     }
 
-    .img {
-        /*-webkit-transform: translate(0,-29%);*/
-        /*-ms-transform: translate(0,-29%);*/
-        /*transform: translate(0,-29%);*/
+    .download-img {
+        width: 2.35rem;
+        height: 2.35rem;
+        border-radius: 100%;
+        margin: auto 1em auto 0;
     }
-
-    /*.fab {*/
-        /*line-height: 0.33 !important;*/
-        /*width: 2.35rem;*/
-        /*height: 2.35rem;*/
-        /*margin-top: 1em !important;*/
-        /*margin-left: -0.07em !important;*/
-    /*}*/

@@ -21,20 +21,23 @@ function triggerDownloads() {
                 const dateString = `${year}_${month}_${day} @ ${hour}:${minute} ${timezone}`;
 
                 downloads.innerHTML += `
-                        <div class="download-box">
-                            <div align="left" class="downloads-div">
-                                <t class="download-title">${key}</t>
-                                <t class="download-file-date">${dateString}</t>
-                                <t class="download-file-size">${sizeMiB} MiB</t>
+                        <a href="download.php?file_name=${encodeURIComponent(key)}" class="button download-box">
+                            <div align="middle" class="downloads-div">
+                                <span class="download-title">${key}</span>
+                                <div align="bottom">
+                                    <span class="download-file-date">${dateString}</span>
+                                    <span class="download-file-size">${sizeMiB} MiB</span>   
+                                </div>
                             </div>
-                            <div align="right" class="downloads-div download-button"">
-                                <a href="download.php?file_name=${encodeURIComponent(key)}" class="button" download>Download</a>
-                            </div>
-                        </div>
+                        </a>
                         `;
 
             });
         });
+
+// <div align="right" class="downloads-div"">
+//     <a href="download.php?file_name=${encodeURIComponent(key)}" class="button download-button" download>Download</a>
+//     </div>
 }
 
 function twoDigits(value) {
