@@ -889,9 +889,9 @@ input, select, textarea {
 				/*box-shadow: inset 0 0 0 1px #ffffff;*/
 				display: flow-root;
 				height: 2.35rem;
+                width: 2.35rem !important;
 				line-height: 2.35rem;
 				text-align: center;
-				width: 2.35rem;
 			}
 
 				ul.icons li a:hover {
