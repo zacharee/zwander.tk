@@ -29,8 +29,6 @@ if (isset($_GET["file_name"]) && isset($_GET["model"])) {
         ob_clean();
         flush();
 
-        echo "Downloading $file";
-
         readfile($path);
     } else {
         echo "$file not found";
