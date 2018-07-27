@@ -34,7 +34,7 @@
 							<ul>
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#work" onclick="addAllProjects()">Work</a></li>
-                                <li><a href="#downloads" onclick="triggerDownloads()">Downloads</a></li>
+                                <li><a href="#losdownloads">LineageOS Downloads</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
@@ -61,14 +61,39 @@
 							</article>
 
 						<!-- Contact -->
-							<article id="downloads">
-								<h2 class="major">Downloads</h2>
+							<article id="losdownloads">
+								<h2 class="major">LineageOS Downloads</h2>
                                 <!--<span class="image main">-->
                                     <!--<a href="https://pixabay.com/en/download-computer-arrow-internet-1699418/" target="_blank"><img class="img" src="images/downloads.jpg" alt="" /></a>-->
                                 <!--</span>-->
 								<p>Any downloads that may or may not exist will appear here.</p>
-                                <a onclick="triggerDownloads()" class="button default" style="display: block; width: 12em; margin: auto;">Refresh</a>
-								<hr>
+                                <table>
+                                    <tbody>
+                                        <tr style="background-color: transparent !important;">
+                                            <td>
+                                                <a onclick="triggerDownloads('h910')" class="button default" style="display: block; width: 12em; margin: auto;">LG-H910</a>
+                                            </td>
+                                            <td>
+                                                <a onclick="triggerDownloads('h915')" class="button default" style="display: block; width: 12em; margin: auto;">LG-H915</a>
+                                            </td>
+                                            <td>
+                                                <a onclick="triggerDownloads('h918')" class="button default" style="display: block; width: 12em; margin: auto;">LG-H918</a>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: transparent !important;">
+                                            <td>
+                                                <a onclick="triggerDownloads('ls997')" class="button default" style="display: block; width: 12em; margin: auto;">LG-LS997</a>
+                                            </td>
+                                            <td>
+                                                <a onclick="triggerDownloads('us996')" class="button default" style="display: block; width: 12em; margin: auto;">LG-US996</a>
+                                            </td>
+                                            <td>
+                                                <a onclick="triggerDownloads('vs995')" class="button default" style="display: block; width: 12em; margin: auto;">LG-VS995</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                                 <ul id="downloads-container" class="actions stacked"></ul>
 							</article>
 

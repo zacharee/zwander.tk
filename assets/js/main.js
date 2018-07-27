@@ -396,7 +396,7 @@
 				&&	location.hash !== '#')
 					$window.on('load', function() {
 						$main._show(location.hash.substr(1), true);
-						if (location.hash.substr(1) === "downloads") triggerDownloads();
+						// if (location.hash.substr(1) === "downloads") triggerDownloads('h918');
                         if (location.hash.substr(1) === "work") addAllProjects();
 					});
 })(jQuery);

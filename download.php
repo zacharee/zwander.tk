@@ -6,11 +6,14 @@
  * Time: 7:51 PM
  */
 
-$basepath = realpath("/home/zach/android/lineage/out/target/product/h918/");
+$basepath = realpath("/home/zach/android/lineage/out/target/product/");
 
-if (isset($_GET["file_name"])) {
+if (isset($_GET["file_name"]) && isset($_GET["model"])) {
     $file = urldecode($_GET['file_name']);
-    $path = $basepath."/".$file;
+    $model = urldecode($_GET['model']);
+    $path = $basepath."/".$model."/".$file;
+
+    $path = str_replace("../", "", $path);
 
     if (file_exists($path)) {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);

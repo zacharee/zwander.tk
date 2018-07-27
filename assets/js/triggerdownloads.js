@@ -1,11 +1,20 @@
-function triggerDownloads() {
+function triggerDownloads(model) {
     $.post(
-        "/addtodownloads.php"
+        "/addtodownloads.php",
+        {
+            "model" : model
+        }
     ).done((data) => {
             const downloads = document.getElementById("downloads-container");
             data = JSON.parse(data);
 
             downloads.innerHTML = null;
+
+            if (Object.entries(data).length === 0) {
+                downloads.innerHTML += `
+                    <h3 style="align-self: center;">Nothing Here</h3>
+                `
+            }
 
             Object.entries(data).forEach(([key, value]) => {
                 value = value.split("/");
@@ -21,7 +30,7 @@ function triggerDownloads() {
                 const dateString = `${year}_${month}_${day} @ ${hour}:${minute} ${timezone}`;
 
                 downloads.innerHTML += `
-                        <a href="download.php?file_name=${encodeURIComponent(key)}" class="button download-box">
+                        <a href="download.php?model=${encodeURIComponent(model)}&file_name=${encodeURIComponent(key)}" class="button download-box">
                             <div align="middle" class="downloads-div">
                                 <span class="download-title">${key}</span>
                                 <div align="bottom">
