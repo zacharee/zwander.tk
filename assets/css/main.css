@@ -1632,7 +1632,7 @@ input, select, textarea {
         width: 100%;
     }
 
-    body::-webkit-scrollbar {
+    ::-webkit-scrollbar {
         width: 0.325em;
 		background-color: rgba(0, 0, 0, 0.5);
     }
@@ -1798,3 +1798,37 @@ input, select, textarea {
         border-radius: 100%;
         margin: auto 1em auto 0;
     }
+
+    .dropbtn {
+        border: none !important;
+        min-width: 12em;
+    }
+
+	.dropdown {
+		position: relative;
+		display: inline-block !important;
+        margin-bottom: 1.5em;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		min-width: 5em !important;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) !important;
+        background-color: rgba(27, 31, 34, 0.85);
+		z-index: 1;
+        border-radius: 4px;
+        border: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 12em;
+	}
+
+    .dropdown-content button {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100%;
+    }
+
+	.dropdown:hover .dropdown-content {display: block;}
+

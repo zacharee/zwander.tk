@@ -10,6 +10,8 @@ function triggerDownloads(model) {
 
             downloads.innerHTML = null;
 
+            document.getElementById("model-button").innerText = model;
+
             if (Object.entries(data).length === 0) {
                 downloads.innerHTML += `
                     <h3 style="align-self: center;">Nothing Here</h3>
