@@ -11,10 +11,11 @@ $extensions = [
     1 => "img"
 ];
 
-$dir = realpath("/home/zach/android/lineage/out/target/product/");
+$dir = realpath("/tmp/lineage/target/product/");
 if (!isset($_POST["model"])) return;
 $model = $_POST['model'];
 $dir = $dir."/".$model;
+$dir = str_replace("../", "", $dir);
 
 $return_array = [];
 

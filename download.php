@@ -6,7 +6,7 @@
  * Time: 7:51 PM
  */
 
-$basepath = realpath("/home/zach/android/lineage/out/target/product/");
+$basepath = realpath("/tmp/lineage/target/product/");
 
 if (isset($_GET["file_name"]) && isset($_GET["model"])) {
     $file = urldecode($_GET['file_name']);
